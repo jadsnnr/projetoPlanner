@@ -19,19 +19,27 @@
   </head>
   <body>
     <h1>Atividades</h1>
-    <section id="main">
+    <section id="main"></section>
+    <script>
+      const activity = {
+        nome: "Almoço",
+        date: new Date("2024-07-08 10:00"),
+        finalizada: false
+
+      }
+
+      const createItem = (activity) => {
+        return `
         <div>
-          <input type="checkbox" /><span>Academia em grupo</span>
+          <input type="checkbox" />
+          <span>Academia em grupo</span>
           <time>sábado, 18 de abril as 8:00h</time>
         </div>
-    </section>
-    <script>
+          `
+      };
 
-        const createItem = () => {
-
-        }
-        const section = document.querySelector('#main')
-        section.innerHTML = 'Alo'
+      const section = document.querySelector("#main");
+      section.innerHTML = createItem(activity);
     </script>
   </body>
 </html>
