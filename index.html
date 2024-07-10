@@ -21,25 +21,43 @@
     <h1>Atividades</h1>
     <section id="main"></section>
     <script>
+
       const activity = {
-        nome: "Almoço",
+        name: "Almoço",
         date: new Date("2024-07-08 10:00"),
         finalizada: false
 
       }
 
+      const activities = [
+        activity,
+        {
+          name:'Academia em grupo',
+          date: new Date("2024-07-09 10:00"),
+          finalizada: true
+
+        }
+      ];
+
       const createItem = (activity) => {
+        let input = '<input type="checkbox" '
+        if (activity.finalizada == true) {
+          input += 'checked'
+        }
+
+        input += '>'
+        
         return `
         <div>
-          <input type="checkbox" />
-          <span>Academia em grupo</span>
-          <time>sábado, 18 de abril as 8:00h</time>
+          ${input}
+          <span>${activity.name} </span>
+          <time>${activity.date} </time>
         </div>
           `
       };
 
       const section = document.querySelector("#main");
-      section.innerHTML = createItem(activity);
+      section.innerHTML = createItem(activities[0]);
     </script>
   </body>
 </html>
